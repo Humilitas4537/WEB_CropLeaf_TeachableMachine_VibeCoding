@@ -1,8 +1,8 @@
 # 농작물 잎 건강 진단기
 Teachable Machine Image Classification 기반 브라우저 예측 웹앱입니다.
 
-실행:
-python -m http.server 8000
+실행: https://dazzling-wisp-416204.netlify.app/
+netlify에서 무료 배포
 
 모델:
 https://teachablemachine.withgoogle.com/models/szc0CyZF_/
