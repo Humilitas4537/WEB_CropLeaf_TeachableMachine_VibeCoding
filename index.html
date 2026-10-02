@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#28583b" />
+<title>농작물 잎 건강 진단기</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 바로가기</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="농작물 잎 건강 진단기 홈">
+      <span class="brand-mark" aria-hidden="true">🌱</span>
+      <span><strong>농작물 잎 건강 진단기</strong><small>초보 농부를 위한 잎 사진 예측 도구</small></span>
+    </a>
+    <nav class="main-nav" aria-label="주요 메뉴">
+      <a href="#diagnosis">잎 진단</a><a href="#resources">도움말</a><a href="#support">정부지원·정책</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">FIELD CHECK · PHOTO AI</p>
+      <h1>잎 사진 한 장으로<br><span>농작물 건강을 살펴보세요.</span></h1>
+      <p class="hero-text">작물 종류를 고르고 잎 사진을 올리면, 브라우저에서 Teachable Machine 이미지 분류 모델을 실행해 최대 3개의 예측 결과를 보여드립니다.</p>
+      <div class="notice-grid">
+        <div class="notice soft">
+          <span class="notice-icon">📷</span><div><strong>잎만 선명하게 촬영하세요</strong><p>잎이 화면의 대부분을 차지하고 흐리지 않은 사진일수록 분석에 도움이 됩니다.</p></div>
+        </div>
+        <div class="notice warning">
+          <span class="notice-icon">⚠️</span><div><strong>중요 · 예측 결과만으로 판단하지 마세요</strong><p>AI 결과는 실제 진단과 다를 수 있습니다. 방제·약제 선택 전 공식 진단을 함께 확인하세요.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="art-sun"></div><div class="art-cloud cloud-a"></div><div class="art-cloud cloud-b"></div><div class="field-hill hill-a"></div><div class="field-hill hill-b"></div>
+      <div class="farmer-card">
+        <svg class="farmer-svg" viewBox="0 0 420 360">
+          <path d="M92 304c24-70 71-105 133-105s109 35 133 105" fill="#d9e6cf"/><path d="M123 274c21-19 43-27 66-27 27 0 52 9 78 29" fill="none" stroke="#668b5b" stroke-width="13" stroke-linecap="round"/>
+          <circle cx="211" cy="132" r="49" fill="#f1c8a8"/><path d="M161 121c2-41 22-61 53-61 27 0 50 17 56 49-16-12-38-17-58-12-16 4-31 13-51 24z" fill="#5b4a3d"/><path d="M154 99c16-28 45-44 75-44 34 0 61 14 78 43l-8 15c-37-17-85-18-137 4z" fill="#d8ac55"/>
+          <circle cx="191" cy="132" r="5" fill="#4f463f"/><circle cx="229" cy="132" r="5" fill="#4f463f"/><path d="M202 151c8 6 16 6 24 0" fill="none" stroke="#a15b54" stroke-width="4" stroke-linecap="round"/>
+          <path d="M154 205c18-18 40-27 61-27s44 9 63 27l-4 72h-121z" fill="#4f7f58"/><path d="M156 223l-51 57 23 21 54-45" fill="#4f7f58"/><path d="M267 222l49 54-22 24-52-48" fill="#4f7f58"/>
+          <path d="M111 281c-8-4-17-1-20 7-4 10 7 19 17 16l25-8-11-18z" fill="#f1c8a8"/><path d="M307 277c8-5 17-2 20 6 4 10-5 19-16 17l-24-8 10-18z" fill="#f1c8a8"/>
+          <path d="M178 277l-7 50h-31l-4-43" fill="#4c4c4a"/><path d="M246 277l10 50h31l-5-44" fill="#4c4c4a"/><path d="M134 329h43" stroke="#3e443e" stroke-width="11" stroke-linecap="round"/><path d="M248 329h43" stroke="#3e443e" stroke-width="11" stroke-linecap="round"/>
+          <path d="M308 254c30-36 45-41 68-21-24 10-33 26-41 43-12 3-22-2-27-22z" fill="#6c965f"/><path d="M322 259c11-8 24-14 42-17" stroke="#48734a" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="art-caption"><span class="leaf-badge">잎을 또렷하게 찍어주세요</span><strong>농부님, 사진만 준비되면 됩니다.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section diagnosis-section" id="diagnosis">
+  <div class="container">
+    <div class="section-heading">
+      <div><p class="eyebrow">STEP 01 — 03</p><h2>잎 사진으로 바로 진단해보기</h2></div>
+      <div class="model-status" id="model-status" data-state="loading"><span class="status-dot"></span><span class="status-text">모델 준비 중…</span></div>
+    </div>
+
+    <div class="diagnosis-grid">
+      <div class="panel upload-panel">
+        <div class="panel-title-row"><div><span class="step-number">1</span><h3>잎 사진 올리기</h3></div><span class="mini-label">JPG · PNG · WEBP</span></div>
+        <div class="upload-area" id="upload-area" tabindex="0" role="button" aria-label="농작물 잎 사진 선택">
+          <input id="image-input" type="file" accept="image/*" hidden />
+          <div class="upload-illustration" aria-hidden="true">🍃</div>
+          <h4>사진을 끌어놓거나 눌러서 선택</h4>
+          <p>잎이 화면의 대부분을 차지하도록 촬영해 주세요.</p>
+          <button class="btn secondary" id="choose-image" type="button">사진 선택</button>
+        </div>
+        <div class="preview-wrap hidden" id="preview-wrap">
+          <div class="preview-head"><strong>선택한 사진</strong><button class="text-btn" id="remove-image" type="button">사진 바꾸기</button></div>
+          <div class="preview-frame"><img id="image-preview" alt="선택한 농작물 잎 사진 미리보기" /></div>
+          <p class="preview-tip">사진이 너무 흐리거나 잎 이외의 배경이 넓으면 예측 정확도가 낮아질 수 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="panel crop-panel">
+        <div class="panel-title-row"><div><span class="step-number">2</span><h3>작물 종류 선택</h3></div><span class="mini-label">필터에 반영</span></div>
+        <p class="panel-help">사진 속 작물을 선택하면 해당 작물의 병 데이터셋 정보를 우선 반영합니다.</p>
+        <div class="crop-options" id="crop-options" role="radiogroup" aria-label="작물 종류">
+          <button type="button" class="crop-option" data-crop="사과"><span>🍎</span><b>사과</b></button><button type="button" class="crop-option" data-crop="옥수수"><span>🌽</span><b>옥수수</b></button><button type="button" class="crop-option" data-crop="포도"><span>🍇</span><b>포도</b></button><button type="button" class="crop-option" data-crop="귤"><span>🍊</span><b>귤</b></button><button type="button" class="crop-option" data-crop="복숭아"><span>🍑</span><b>복숭아</b></button>
+          <button type="button" class="crop-option" data-crop="고추"><span>🌶️</span><b>고추</b></button><button type="button" class="crop-option" data-crop="감자"><span>🥔</span><b>감자</b></button><button type="button" class="crop-option" data-crop="호박"><span>🎃</span><b>호박</b></button><button type="button" class="crop-option" data-crop="토마토"><span>🍅</span><b>토마토</b></button><button type="button" class="crop-option" data-crop="기타"><span>🌱</span><b>기타</b></button>
+        </div>
+        <button class="btn primary analyze-btn" id="analyze-btn" type="button" disabled><span>🔎</span><span>잎 상태 예측하기</span></button>
+        <p class="action-note" id="action-note">사진과 작물 종류를 선택하면 분석할 수 있어요.</p>
+      </div>
+    </div>
+
+    <div class="panel result-panel hidden" id="result-panel" aria-live="polite">
+      <div class="result-head"><div><p class="eyebrow">STEP 03 — RESULT</p><h3>예측 결과 TOP 3</h3><p id="result-summary" class="result-summary"></p></div><div class="result-meta"><span id="result-crop" class="pill"></span><span id="result-rule" class="pill muted"></span></div></div>
+      <div id="result-warning" class="result-warning hidden"></div>
+      <div id="result-list" class="result-list"></div>
+      <details class="raw-results"><summary>모델 원본 출력 보기</summary><p class="raw-help">아래 값은 모델의 실제 className과 probability에서 읽은 원본 TOP 3입니다.</p><div id="raw-list"></div></details>
+      <div class="ncpms-result-guide" role="note" aria-label="더 정확한 진단 안내">
+        <div class="ncpms-guide-icon" aria-hidden="true">🪲</div>
+        <div class="ncpms-guide-copy"><span class="ncpms-guide-kicker">더 정확한 진단이 필요하신가요?</span><strong>국가농작물병해충관리시스템의 병해충영상진단을 이용해 보세요.</strong><p>이 결과는 사진 기반 <b>예측 보조정보</b>입니다. 실제 병해충 여부는 공식 영상진단과 전문가 상담으로 다시 확인하는 것이 좋습니다.</p></div>
+        <a class="btn ncpms-result-btn" href="https://ncpms.rda.go.kr/npms/" target="_blank" rel="noopener">병해충영상진단 바로가기 ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section info-section" id="resources">
+<div class="container"><div class="section-heading compact"><div><p class="eyebrow">BEGINNER GUIDE</p><h2>초보 농부에게 필요한 도움말</h2><p>사진 진단은 첫 확인 단계로 활용하고, 아래의 공식 정보와 함께 살펴보세요.</p></div></div>
+<div class="resource-grid">
+<a class="resource-card" href="https://www.nongsaro.go.kr/portal/portalMain.ps" target="_blank" rel="noopener"><span class="resource-icon">📚</span><div><h3>농사로</h3><p>재배기술, 작목별 정보, 농업기술 상담 등 농촌진흥청 농업기술 포털.</p></div><span class="arrow">↗</span></a>
+<a class="resource-card" href="https://ncpms.rda.go.kr/npms/" target="_blank" rel="noopener"><span class="resource-icon">🪲</span><div><h3>국가농작물병해충관리시스템</h3><p>병해충 검색·진단, 발생정보, 도감정보 등을 확인할 수 있습니다.</p></div><span class="arrow">↗</span></a>
+<a class="resource-card" href="https://uni.agrix.go.kr/" target="_blank" rel="noopener"><span class="resource-icon">🧾</span><div><h3>농업e지 · 농림사업정보시스템</h3><p>농업경영체 및 농림사업 관련 온라인 업무와 지원사업 정보를 확인합니다.</p></div><span class="arrow">↗</span></a>
+<a class="resource-card" href="https://www.returnfarm.com/" target="_blank" rel="noopener"><span class="resource-icon">🏡</span><div><h3>귀농귀촌종합센터</h3><p>귀농·귀촌 준비, 교육, 지역정보를 찾아볼 수 있는 안내 창구.</p></div><span class="arrow">↗</span></a>
+</div></div></section>
+
+<section class="section support-section" id="support"><div class="container">
+<div class="support-callout"><div><p class="eyebrow">2026 POLICY HUB</p><h2>정부 지원·정책 정보를 한곳에서</h2><p>사업 내용과 신청기간은 수시로 바뀔 수 있으므로 공식 공고에서 최종 확인하세요.</p></div><a class="btn primary" href="https://www.nongupez.go.kr/nsm/bizAply/wholeBiz/wholeBizMain" target="_blank" rel="noopener">2026 지원사업 찾기 ↗</a></div>
+<div class="policy-grid"><a class="policy-card" href="https://www.nongupez.go.kr/nsm/bizAply/wholeBiz/wholeBizMain" target="_blank" rel="noopener"><span class="policy-tag">맞춤형 사업</span><h3>농림사업 전체사업</h3><p>지역·대상·품목·신청기간 등으로 농림사업을 검색합니다.</p></a><a class="policy-card" href="https://www.mafra.go.kr/" target="_blank" rel="noopener"><span class="policy-tag">정책 공고</span><h3>농림축산식품부</h3><p>농업·농촌 정책, 법령, 보도자료, 공고를 확인합니다.</p></a><a class="policy-card" href="https://www.fbo.or.kr/" target="_blank" rel="noopener"><span class="policy-tag">농지</span><h3>농지은행</h3><p>농지 임대·매매 등 농지 관련 제도를 확인합니다.</p></a></div>
+<p class="support-footnote">※ 정부 지원·정책은 거주지, 연령, 농업경영체 여부, 재배품목 및 신청시기 등에 따라 자격이 달라질 수 있습니다.</p>
+</div></section>
+
+<section class="section safety-section"><div class="container"><div class="safety-box" role="alert"><div class="safety-icon" aria-hidden="true">⚠️</div><div><div class="safety-kicker">중요 주의사항</div><h2>예측 결과를 실제 진단처럼 맹신하지 마세요.</h2><p>이 사이트는 초보 농부가 잎의 이상 증상을 빠르게 확인해 보는 <strong>예측 보조도구</strong>입니다. 이미지 분류 모델의 결과는 실제 병명·원인과 다를 수 있고, 약제 선택이나 방제 여부를 단독으로 결정하는 용도로 사용하면 안 됩니다. 의심 증상이 지속되거나 피해가 커지는 경우에는 농업기술센터, 농촌진흥청 또는 국가농작물병해충관리시스템의 전문가 진단을 함께 이용하세요.</p></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><div><strong>농작물 잎 건강 진단기</strong><p>Teachable Machine Image Classification 기반 브라우저 예측 도구</p></div><div class="footer-links"><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener">Teachable Machine</a><a href="https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image" target="_blank" rel="noopener">TM Image Library</a><details class="data-attribution"><summary>데이터 출처 · 이용 정보</summary><div class="data-attribution-panel"><p><strong>PlantVillage Dataset</strong>을 참고·활용한 잎 질병 분류 모델입니다.</p><div class="data-attribution-links"><a href="https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset/data" target="_blank" rel="noopener">Kaggle 데이터셋 페이지 ↗</a><a href="https://github.com/spMohanty/PlantVillage-Dataset" target="_blank" rel="noopener">원본 PlantVillage 저장소 ↗</a><a href="https://doi.org/10.3389/fpls.2016.01419" target="_blank" rel="noopener">관련 연구 논문(DOI) ↗</a></div><p class="data-attribution-note">데이터의 원본 출처와 이용 조건은 제공처의 최신 안내를 함께 확인해 주세요.</p></div></details></div></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
